@@ -45,12 +45,26 @@ body{
     margin: 10px;
     grid-template-columns: repeat(3,15vh);
 }
+.content button{
+    height: 3rem;
+    margin-top: 8rem;
+    background-color: skyblue;
+    border: none;
+    border-radius: 5px;
+    width: 7rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    transition: 2s ease-in-out;
+}
+.content button:hover{
+    background-color: yellowgreen;
+}
 .inputArea{
     text-align: center;
     height: 149px;
     font-size: 80px;
     font-weight: bold;
-    width: 140px;
+    width: 100%;
     color: white;
     box-sizing: border-box;
     border: 4px solid black;
@@ -145,5 +159,86 @@ body{
     }
     to{
         box-shadow: -1px 0px 15px 2px #1b00ff;
+    }
+}
+@media screen and (max-width:1020px){
+    .victory{
+        top:-742px;
+    }
+    .btn button{
+        height: 115px;
+    }
+    @keyframes winpop{
+        from{
+            font-size: 0;
+        }
+        to{
+            font-size: 30px;
+        }
+    }
+    .gif img{
+        height: 50vh;
+    }
+}
+@media screen and (max-width:714px){
+    .content button{
+        margin-top: 0;
+        margin: 1rem;
+    }
+    #playerTurn{
+        margin: 0;
+    }
+    #details{
+        width: 100%;
+        margin-right: 0;
+    }
+    .victory {
+        top: -549px;
+    }
+    .btn button{
+        height: 74px;
+        font-size: 23px;
+        width: 225px;
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width:480px){
+    #playerTurn{
+        font-size: 30px;
+    }
+    .box{
+        grid-template-columns: repeat(3,12vh);
+    }
+    .inputArea{
+        height: 120px;
+    }
+    .gif img{
+        height: 30vh;
+    }
+    #details{
+        width: 100%;
+        margin-right: 0;
+    }
+    .btn button{
+        height: 74px;
+        font-size: 23px;
+        width: 225px;
+    }
+
+    @keyframes winpop{
+        from{
+            font-size: 0;
+        }
+        to{
+            font-size: 20px;
+        }
+    }
+    .victory {
+        top: -460px;
+    }
+}
+@media screen and (max-width:370px){
+    .victory {
+        top: -503px;
     }
 }
