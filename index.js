@@ -5,13 +5,13 @@ const music = new Audio('./music.mp3');
 const inputArea = document.getElementsByClassName('inputArea')
 let victoryBox = document.getElementById('victory');
 let content = document.querySelector('.content');
-let btn = document.getElementById('btnClick');
+let btn = document.getElementsByClassName('btnClick');
 let details =document.getElementById('details')
 let playerTurn =document.getElementById('playerTurn');
 
 let player1 = prompt('Enter 1st Player Name');
 let player2 = prompt('Enter 2nd player Name');
-
+console.log(btn)
 if(player1 === '')
 player1 = prompt('Enter 1st Player Name Again');
 if(player2 === '')
@@ -104,19 +104,21 @@ let checkIfComplete =()=>{
     })
 }
 
-btn.addEventListener('click',()=>{
-    victoryBox.classList.remove('victory');
-    victoryBox.style.display = 'none';
-    
-    Array.from(inputArea).forEach(e=>{
-        e.innerText = "";
-        e.style.backgroundColor = '';
-        e.classList.remove('victoryAnimate');
-    })
-    
-    initialTurn ="X";
-    nextplayer = player1;
-    playerTurn.innerText= nextplayer +" turn " + `(${initialTurn})`;
-    music.pause();
-})
 
+    for(btn of btn){
+    btn.addEventListener('click',()=>{
+        victoryBox.classList.remove('victory');
+        victoryBox.style.display = 'none';
+        
+        Array.from(inputArea).forEach(e=>{
+            e.innerText = "";
+            e.style.backgroundColor = '';
+            e.classList.remove('victoryAnimate');
+        })
+        
+        initialTurn ="X";
+        nextplayer = player1;
+        playerTurn.innerText= nextplayer +" turn " + `(${initialTurn})`;
+        music.pause();
+    })
+    }
