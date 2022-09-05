@@ -6,5 +6,4 @@ Single player mode will be added soon ✊😁😁
 
 #To be done
 
-- Responsive
 - Single player mode
